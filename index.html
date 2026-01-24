@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Моё Полное Био</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --red: #ff0000;
+      --dark: #0a0a0a;
+      --darker: #000;
+      --light: #f0f0f0;
+    }
+
+    body {
+      background-color: var(--darker);
+      color: var(--light);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      color: var(--red);
+      text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeInDown 1.2s forwards;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--red);
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      opacity: 0;
+      animation: zoomIn 1s 0.3s forwards;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
+    }
+
+    .section {
+      background: rgba(20, 20, 20, 0.9);
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      border-left: 4px solid var(--red);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: var(--red);
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #ddd;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 15px 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    /* Анимации */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Адаптивность */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      .profile-img {
+        width: 150px;
+        height: 150px;
+      }
+      .section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>МОЁ ПОЛНОЕ БИО</h1>
+    </header>
+
+    <div class="profile">
+      <!-- Замени "your-photo.jpg" на путь к своей фотографии -->
+      <!-- Если фото нет — закомментируй или удали тег img -->
+      <img src="https://i.namu.wiki/i/-JlcdGpNEm3qJPtEA0aa64m_DSwXeftgHsM2TEp_NI2w3I30HzG6DOObKxi72Re3MR3txdcq5Y91WqNuv0Sn_w.webp" alt="Моё фото" class="profile-img" id="profilePic">
+    </div>
+
+    <section class="section" id="about">
+      <h2><i class="fas fa-user"></i> Обо мне</h2>
+      <p>
+       ну привет еще раз: me name <strong> NASH </strong>, и я ...-летний студент / школьник / разработчик / геймер / творец и т.д. родился я на планете земля.
+      </p>
+      <p>
+        в обычное время я занимаюсь хуйней не обиисудь.
+      </p>
+      <p>
+        Этот сайт — сделан для того что бы люди могли как нибудь узнать о бо мне по больше.
+      </p>
+    </section>
+
+    <section class="section" id="interests">
+      <h2><i class="fas fa-heart"></i> Мои интересы</h2>
+      <ul>
+        <li> играю как в КС2, Dota2 и дохуя игр </li>
+
+        <li> и читаю очень много манг, на счет манг можешь перейти в тик ток, там у меня очень много интересного контента</li>
+      </ul>
+    </section>
+
+    <section class="section" id="goals">
+      <h2><i class="fas fa-bullseye"></i> Цели и мечты</h2>
+      <p>
+        особо у меня их и нету ну, а так хочу:
+      </p>
+      <ul>
+        <li>Создать сайт магазин игр по самым хорошим ценам</li>
+        <li>и еще хотел бы создать свое приложение которое превзойти́ Мессенжер Макс и ТГ, ну это лишь мечта</li>
+        <li>Найти единомышленников и друзей по интересам</li>
+      </ul>
+    </section>
+
+    <section class="section" id="contact">
+      <h2><i class="fas fa-paper-plane"></i> Связаться со мной</h2>
+      <p>
+        так теперь тыкай на эти две кнопки если хочешь подружиться со мной!
+      </p>
+      <p>
+        🔗 Мой Telegram: <a href="https://t.me/taedled" style="color:#ff4444; text-decoration: none;">@nash</a><br>
+        🎵 TikTok: <a href="https://tiktok.com/@gupoo.99" style="color:#ff4444; text-decoration: none;">@gupoo.99</a>
+      </p>
+    </section>
+
+     <section class="section" id="contact">
+      <h2><i class="fas fa-paper-plane"></i> МОИ ПИДОРЫ</h2>
+      <p>
+         мои маленькие пидорасики которых я люблю! 
+      </p>
+      <p>
+         <a href="https://t.me/DRDR_KIRA" style="color:#ff4444; text-decoration: none;">@DRDR_KIRA</a><br>
+         <a href="https://t.me/Neuyazv1myy" style="color:#ff4444; text-decoration: none;">@Neuyazv1myy</a><br>
+         <a href="https://t.me/uglykllld" style="color:#ff4444; text-decoration: none;">@uglykllld</a><br>
+         <a href="https://t.me/hardsauron" style="color:#ff4444; text-decoration: none;">@hardsauron</a><br>
+         <a href="https://t.me/zxcm1sta" style="color:#ff4444; text-decoration: none;">@zxcm1sta</a><br>
+         <a href="https://t.me/dekri_official" style="color:#ff4444; text-decoration: none;">@dekri_official</a><br>
+          <a href="https://t.me/shadow_zitrx" style="color:#ff4444; text-decoration: none;">@shadow_zitrx</a><br>
+           <a href="https://t.me/Piska211" style="color:#ff4444; text-decoration: none;">@Piska211</a><br>
+            
+
+       
+    </section>
+
+    <footer>
+      © 2026 • спасибо что заглянул 🔥
+    </footer>
+  </div>
+
+  <script>
+    // Простая анимация появления секций при прокрутке
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.section');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      sections.forEach(section => observer.observe(section));
+
+      // Если фото не загружено — скрыть рамку
+      const img = document.getElementById('profilePic');
+      img.onerror = () => {
+        img.style.display = 'none';
+        img.parentElement.style.marginBottom = '30px';
+      };
+    });
+  </script>
+</body>
+</html>
